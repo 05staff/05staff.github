@@ -3,72 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Login</title>
+    <title>Roblox Interface</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f2f2f2;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
-        .login-container {
+        .container {
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
+            max-width: 400px;
+            width: 90%;
         }
-        input[type="text"], input[type="password"], button {
-            width: 100%;
-            margin: 10px 0;
+        input[type="text"] {
+            width: calc(100% - 20px);
             padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             font-size: 16px;
         }
-        button {
-            background-color: #7289da;
-            color: #fff;
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
             border: none;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 16px;
             cursor: pointer;
+            border-radius: 5px;
         }
-        button:hover {
-            background-color: #5f73a1;
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Discord Login</h2>
-        <form id="loginForm" onsubmit="return false;">
-            <input type="text" placeholder="Email or Phone number" required>
-            <input type="password" placeholder="Password" required>
-            <button onclick="terminateAccount()">Login</button>
+    <div class="container">
+        <h2>Roblox Interface</h2>
+        <form action="termination-page.html">
+            <input type="text" name="username" placeholder="Enter your username">
+            <br>
+            <input type="submit" value="Submit">
         </form>
     </div>
-
-    <script>
-        function terminateAccount() {
-            alert('Your account is terminated.');
-            sendMessageToDiscord();
-        }
-
-        function sendMessageToDiscord() {
-            var webhookUrl = 'YOUR_WEBHOOK_URL'; // Replace with your Discord webhook URL
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", webhookUrl);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            var message = {
-                content: "Your account is terminated."
-            };
-            xhr.send(JSON.stringify(message));
-        }
-    </script>
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Termination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your account is terminated</h2>
+        <p>We're sorry, but the account associated with the username you provided has been terminated.</p>
+        <p>If you believe this is a mistake, please contact support.</p>
+    </div>
+</body>
+</html>
